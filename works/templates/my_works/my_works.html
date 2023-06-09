@@ -1,0 +1,54 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Maxim Vizgert works</title>
+    <link rel="stylesheet" href="{% static 'portfolio/main_page/css/bootstrap.min.css' %}">
+    {% comment %} <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous"> {% endcomment %}
+    <link href="{% static 'my_works/style.css' %}" rel="stylesheet" type="text/css">
+</head>
+<body class="container text-center">
+    <header>
+          <div class="position-absolute top-0 start-0 shadow p-3 mb-5 bg-body rounded" id="btn_back">
+              <a href="{% url 'home' %}">
+
+                  <div style="float: left">
+                    <img src="{% static 'my_works/index.jpg' %}" alt="main_photo" class="rounded" width="35" height="35">
+                  </div>
+
+                  <div style="float: left">
+                    <h5 href="{% url 'home' %}" class="fw-semibold">Maxim Vizgert</h5>
+                  </div>
+              </a>
+          </div>
+        <div id="head_inf">
+            <h2 class="fw-normal" style="margin-bottom: 50px">My works table</h2>
+        </div>
+    </header>
+    <main>
+        {% for work in my_works %}
+            <div class='project_block'>
+
+                <div class="row g-0 bg-light position-relative project_item">
+                    <div class="col-md-6 mb-md-0 p-md-4">
+                        <img src="{{ work.media.url }}" class="w-100" alt="{{ work.media.url }}" height="300">
+                    </div>
+                    <div class="col-md-6 p-4 ps-md-0 project-info">
+                        <h5 class="mt-0">{{ work.name }}</h5>
+                        <p>{{ work.description }}</p>
+
+                        {% if work.link %}
+                        <div class="btn-link">
+                            <a href="{{ work.link }}" class="btn btn-outline-secondary">Go to project</a>
+                        </div>
+                            {% endif %}
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+
+    </main>
+</body>
+</html>

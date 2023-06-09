@@ -1,0 +1,24 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Maxim Vizgert</title>
+    <link rel="stylesheet" href="{% static 'portfolio/main_page/css/bootstrap.min.css' %}">
+    {% comment %} <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous"> {% endcomment %}
+    <link href="{% static 'portfolio/main_page/style.css' %}" rel="stylesheet" type="text/css">
+</head>
+<body class="container text-center">
+    <header>
+        <img src="{% static 'portfolio/main_page/index.jpg' %}" class="rounded mx-auto d-block; shadow-lg p-3 mb-5 bg-body rounded" id="main_photo" width="400px" height="400px">
+        <h1 class="fw-semibold">Maxim Vizgert</h1>
+        <h5 class="fw-light">Junior Python Developer</h5>
+    </header>
+    <main>
+        <div id="btn_my_works">
+            <a href="{% url 'myworks' %}" class="btn btn-dark" >My Works</a>
+        </div>
+    </main>
+</body>
+</html>

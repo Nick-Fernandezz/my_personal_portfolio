@@ -1,0 +1,41 @@
+@charset "UTF-8";
+
+#head_inf {
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+
+#btn_back {
+    margin-top: 18px;
+    margin-left: 30px;
+}
+
+#btn_back h5 {
+    margin-top: 3px;
+    margin-left: 8px;
+    color: black;
+}
+
+.project-info {
+    position: relative;
+}
+
+.btn-link {
+    /* display: block; */
+    position: absolute;
+    bottom: 40px;
+    width: 100%;
+}
+
+.project_block {
+    
+    margin-bottom: 20px;
+    
+}
+
+.project_item {
+    
+    height: 100%;
+    border: 1px #645f5f solid;
+    border-radius: 20px;
+}
